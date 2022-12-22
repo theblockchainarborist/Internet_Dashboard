@@ -1,16 +1,28 @@
 <script setup>
+import AddNewShortcut from '../components/AddNewShortcut.vue';
+import FooterComponent from '../components/FooterComponent.vue';
 import HelloWorld from '../components/HelloWorld.vue'
 </script>
 
 <template>
     <div id="main-div" class="">
         <hello-world />
+        <footer-component />
+        
+        <div v-if="this.$store.state.addNewShortcut">
+            <AddNewShortcut />
+        </div>
+        
     </div>
 </template>
 
 
 
 <style>
+
+#main-div {
+    postiton: relative;
+}
 
 .background-img {
   position: relative;

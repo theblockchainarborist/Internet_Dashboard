@@ -5,7 +5,7 @@ import adamKoolUnsplash from './assets/adamKoolUnsplash.jpg'
 </script>
 
 <template>
-  <div id="app-main-div" class="full-screen background-img motion" :style="adamKoolUnsplash">
+  <div id="app-main-div" class="full-screen background-img motion">
     <a href="https://vitejs.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
     </a>
