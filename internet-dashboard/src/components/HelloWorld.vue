@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue'
+import ShortcutList from './ShortcutList.vue'
 
 defineProps({
   msg: String,
@@ -13,6 +14,9 @@ const count = ref(0)
 
   <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>
+    
+    <shortcut-list />
+
   </div>
 </template>
 
@@ -21,3 +25,5 @@ const count = ref(0)
   color: #888;
 }
 </style>
+
+  components: { ShortcutList },

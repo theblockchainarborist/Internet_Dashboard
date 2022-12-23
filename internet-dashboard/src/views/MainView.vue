@@ -1,17 +1,19 @@
 <script setup>
 import AddNewShortcut from '../components/AddNewShortcut.vue';
 import FooterComponent from '../components/FooterComponent.vue';
-import HelloWorld from '../components/HelloWorld.vue'
+import ShortcutList from '../components/ShortcutList.vue'
 </script>
 
 <template>
     <div id="main-div" class="">
-        <hello-world />
+        <shortcut-list />
         <footer-component />
-        
+
         <div v-if="this.$store.state.addNewShortcut">
             <AddNewShortcut />
         </div>
+
+        
         
     </div>
 </template>

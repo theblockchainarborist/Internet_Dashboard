@@ -20,7 +20,9 @@
                     </label>
 
                     <input type="text"
-                        name="shortcut-name">
+                        name="shortcut-name"
+                        v-model="shortcut.title"
+                    >
                 </div>
 
                 <div class="form-row">
@@ -30,7 +32,7 @@
                     </label>
                     <input type="text" 
                         name="url" 
-                        v-model="webpageUrl" 
+                        v-model="shortcut.URL" 
                         @input="updateFavicon"
                     >
                 </div>
@@ -46,46 +48,49 @@
 import FavIconService from '../services/FavIconService.js'
 
 export default {
-  data() {
+    name: 'add-shortcuts',
+    data() {
     return {
-      visible: this.$store.state.addNewShortcut,
-      webpageUrl: '',
-      faviconUrl: '',
-      shortcut: {
-        title: '',
-        URL: ''
-      }
-    };
-  },
-  methods: {
-    show() {
-      this.visible = true;
-
-      // Get the modal element
-      const modal = this.$refs.modal;
-
-      // Calculate the top and left positions for the modal
-      const top = (window.innerHeight - modal.offsetHeight) / 2;
-      const left = (window.innerWidth - modal.offsetWidth) / 2;
-
-      // Set the top and left positions for the modal
-      modal.style.top = `${top}px`;
-      modal.style.left = `${left}px`;
-
-      // Focus on the modal
-      modal.focus();
+        visible: this.$store.state.addNewShortcut,
+        webpageUrl: '',
+        faviconUrl: '',
+        shortcut: {
+            title: '',
+            URL: ''
+        }
+        };
     },
-    submit() {
-      // Submit the form
-      this.$store.commit('TOGGLE_ADD_NEW_SHORTCUT', false);
+    methods: {
+        show() {
+        this.visible = true;
+
+        // Get the modal element
+        const modal = this.$refs.modal;
+
+        // Calculate the top and left positions for the modal
+        const top = (window.innerHeight - modal.offsetHeight) / 2;
+        const left = (window.innerWidth - modal.offsetWidth) / 2;
+
+        // Set the top and left positions for the modal
+        modal.style.top = `${top}px`;
+        modal.style.left = `${left}px`;
+
+        // Focus on the modal
+        modal.focus();
+        },
+        submit() {
+        // Submit the form
+        this.$store.commit('TOGGLE_ADD_NEW_SHORTCUT', false);
+        console.log(this.shortcut)
+        this.$store.commit('ADD_SHORTCUT', this.shortcut)
+        },
     },
-  },
-  computed: {
-    getVisibility() {
-        let v = this.$store.state.addNewShortcut 
-        return v;
+    computed: {
+        getVisibility() {
+            let v = this.$store.state.addNewShortcut 
+            return v;
+        }
     }
-  }
 };
 </script>
 
