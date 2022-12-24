@@ -3,10 +3,10 @@
         <div id="add-link-div" class="footer-item" v-on:click="addNewShortcut">
             Add Shortcut
         </div>
-        <div id="add-widget-div" class="footer-item">
+        <div id="add-widget-div" class="footer-item" v-on:click="addNewWidget" >
             Add Widgets
         </div>
-        <div id="settings-div" class="footer-item">
+        <div id="settings-div" class="footer-item" v-on:click="showSettingsMenu" >
             Settings
         </div>
     </div>
@@ -22,6 +22,12 @@ export default {
     methods: {
         addNewShortcut() {
             this.$store.commit('TOGGLE_ADD_NEW_SHORTCUT', true);
+        },
+        addNewWidget() {
+            this.$store.commit('TOGGLE_ADD_NEW_WIDGET', true);
+        },
+        showSettingsMenu() {
+            this.$store.commit('TOGGLE_SHOW_SETTINGS', true);
         }
     }
 }

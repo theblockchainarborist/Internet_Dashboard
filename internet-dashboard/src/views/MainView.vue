@@ -2,6 +2,8 @@
 import AddNewShortcut from '../components/AddNewShortcut.vue';
 import FooterComponent from '../components/FooterComponent.vue';
 import ShortcutList from '../components/ShortcutList.vue'
+import addNewWidget from '../components/AddNewWidget.vue'
+import SettingsComponent from '../components/SettingsComponent.vue'
 </script>
 
 <template>
@@ -13,7 +15,13 @@ import ShortcutList from '../components/ShortcutList.vue'
             <AddNewShortcut />
         </div>
 
-        
+        <div v-if="this.$store.state.addNewWidget">
+            <add-new-widget />
+        </div>
+
+        <div v-if="this.$store.state.showSettings">
+            <settings-component />
+        </div>
         
     </div>
 </template>

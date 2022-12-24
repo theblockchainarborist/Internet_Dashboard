@@ -61,28 +61,16 @@ export default {
         };
     },
     methods: {
-        show() {
-        this.visible = true;
-
-        // Get the modal element
-        const modal = this.$refs.modal;
-
-        // Calculate the top and left positions for the modal
-        const top = (window.innerHeight - modal.offsetHeight) / 2;
-        const left = (window.innerWidth - modal.offsetWidth) / 2;
-
-        // Set the top and left positions for the modal
-        modal.style.top = `${top}px`;
-        modal.style.left = `${left}px`;
-
-        // Focus on the modal
-        modal.focus();
-        },
         submit() {
         // Submit the form
-        this.$store.commit('TOGGLE_ADD_NEW_SHORTCUT', false);
-        console.log(this.shortcut)
-        this.$store.commit('ADD_SHORTCUT', this.shortcut)
+        if (this.shortcut.title !== '' && this.shortcut.URL !== '') {
+            this.$store.commit('TOGGLE_ADD_NEW_SHORTCUT', false);
+            console.log(this.shortcut)
+            this.$store.commit('ADD_SHORTCUT', this.shortcut)
+        } else {
+            this.$store.commit('TOGGLE_ADD_NEW_SHORTCUT', false);
+        }
+        
         },
     },
     computed: {
