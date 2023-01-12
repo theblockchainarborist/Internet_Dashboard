@@ -29,26 +29,24 @@ import SettingsComponent from '../components/SettingsComponent.vue'
 
 
 <style>
-
+/* Main */
 #main-div {
     postiton: relative;
 }
 
+
+/* Background */
 .background-img {
   position: relative;
   background: url('../assets/adamKoolUnsplash.jpg');
   background-position: 50% 50%;
   background-size: 100% 100%;
 }
-
 .motion {
   animation: slide 50s linear infinite;
   transition: all .1s ease;
   animation-iteration-count: 1;
 }
-
-
-
 @keyframes slide {
    0% {
     background-size: 250% 250%;

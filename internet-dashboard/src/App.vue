@@ -12,6 +12,7 @@ import adamKoolUnsplash from './assets/adamKoolUnsplash.jpg'
 </template>
 
 <style scoped>
+/* Logo */
 .logo {
   height: 6em;
   padding: 1.5em;
